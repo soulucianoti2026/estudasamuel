@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>História em jogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand">História em jogo</div>
+      </div>
+
+      <div class="topbar-right">
+        <span class="brand-tag">CFNP / UNIDADE BLUMENAU</span>
+        <button class="nav-btn">Meus testes</button>
+        <button class="nav-btn outline">Professor</button>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div id="screen-home" class="screen active">
+        <div class="course-hero">
+          <div class="eyebrow">HISTÓRIA · AVALIAÇÕES ON-LINE</div>
+          <h1>
+            Uma viagem pela América.<br />
+            Três desafios para aprender.
+          </h1>
+          <p>
+            Explore a colonização espanhola, inglesa e portuguesa. Escolha uma aula e teste seus
+            conhecimentos, no seu ritmo.
+          </p>
+          <div class="hero-metrics">
+            <span>10 questões por teste</span>
+            <span>1 ponto por questão</span>
+            <span>Correção ao finalizar</span>
+          </div>
+        </div>
+
+        <div class="section-title-row">
+          <h2>Escolha seu teste</h2>
+          <span>3 aulas disponíveis</span>
+        </div>
+
+        <div class="course-grid" id="course-grid"></div>
+
+        <div class="notice-box">
+          <span>Antes de começar</span>
+          <p>
+            Todos as questões são objetivas. Marque uma alternativa por pergunta. Você poderá revisar
+            suas escolhas antes de enviar.
+          </p>
+        </div>
+
+        <footer class="footer-note">CFNP • BLUMENAU / HISTÓRIA • 2026</footer>
+      </div>
+
+      <div id="screen-quiz" class="screen">
+        <div class="quiz-top-nav">
+          <button class="back-button" id="back-to-home">← Todos os testes</button>
+          <div class="topbar-right compact">
+            <button class="nav-btn">Meus testes</button>
+            <button class="nav-btn outline">Professor</button>
+          </div>
+        </div>
+
+        <div class="test-header">
+          <div class="test-header-meta" id="test-header-meta">AULA 23 / TESTE 1</div>
+          <h2 id="test-name">Colonização da América Espanhola</h2>
+          <p id="test-description">
+            Conquista, sociedade, economia e trabalho na América colonial.
+          </p>
+        </div>
+
+        <div class="progress-panel">
+          <div class="progress-head">
+            <span>Seu progresso</span>
+            <span id="progress-text">0 de 10 respondidas</span>
+          </div>
+          <div class="progress-bar">
+            <span id="progress-fill"></span>
+          </div>
+          <div class="progress-dots" id="progress-dots"></div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="question-meta-row">
+            <span class="question-label" id="question-label">QUESTÃO 01</span>
+            <span class="question-points">1 ponto</span>
+          </div>
+
+          <h3 id="question-text">Pergunta</h3>
+
+          <div id="options-container" class="options-grid"></div>
+        </div>
+
+        <div class="bottom-actions">
+          <button class="primary-btn wide" id="submit-test">Enviar respostas →</button>
+        </div>
+      </div>
+
+      <div id="screen-result" class="screen">
+        <div class="quiz-top-nav">
+          <button class="back-button" id="result-to-home">← Todos os testes</button>
+          <div class="topbar-right compact">
+            <button class="nav-btn">Meus testes</button>
+            <button class="nav-btn outline">Professor</button>
+          </div>
+        </div>
+
+        <div class="results-header">
+          <div class="result-badge" id="result-badge">AULA 23 / TESTE 1</div>
+          <h2 id="result-title">Cada resposta é uma descoberta.</h2>
+          <p>Exemplo de resultado • Visualização do aluno após o envio</p>
+        </div>
+
+        <div class="score-banner">
+          <div class="score-left">
+            <div class="small-label">SUA NOTA</div>
+            <div class="score-value" id="score-value">8 / 10</div>
+            <div class="score-caption">pontos conquistados</div>
+          </div>
+          <div class="score-right">
+            <h3 id="score-message">Muito bem! Continue explorando.</h3>
+            <p id="score-detail">
+              8 acertos • 2 questões para revisar • 80% de aproveitamento
+            </p>
+            <small>
+              A correção mostra onde você acertou e o que pode aprender agora.
+            </small>
+          </div>
+        </div>
+
+        <div class="section-title-row mini-title-row">
+          <h2>Seu percurso neste teste</h2>
+        </div>
+
+        <div id="review-grid" class="question-review-grid"></div>
+
+        <div class="review-list" id="review-list"></div>
+
+        <div class="review-actions">
+          <button class="primary-btn" id="show-gabarito">Ver gabarito completo</button>
+          <button class="secondary-btn" id="return-to-tests">Escolher outro teste</button>
+        </div>
+      </div>
+
+      <div id="screen-gabarito" class="screen">
+        <div class="quiz-top-nav">
+          <button class="back-button" id="gabarito-to-home">← Todos os testes</button>
+          <div class="topbar-right compact">
+            <button class="nav-btn">Meus testes</button>
+            <button class="nav-btn outline">Professor</button>
+          </div>
+        </div>
+
+        <div class="gabarito-page">
+          <div class="area-tag">ÁREA DO PROFESSOR / ACESSO RESTRITO</div>
+          <h2>Gabaritos dos testes</h2>
+          <p>
+            Três avaliações independentes. Cada questão vale 1 ponto; cada teste vale 10 pontos.
+          </p>
+
+          <div class="teaching-box">
+            <strong>Material de uso do professor</strong>
+            <span>
+              Mantenha esta área protegida no site. O aluno só deve consultar o gabarito após o envio
+              e a liberação da correção.
+            </span>
+          </div>
+
+          <div class="gabarito-grid" id="gabarito-grid"></div>
+
+          <div class="responses-panel">
+            <h3>Respostas dos alunos</h3>
+            <p>
+              Os envios e as notas de cada teste deverão ser armazenados separadamente na implementação
+              do site.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
